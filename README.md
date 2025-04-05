@@ -1,8 +1,9 @@
 # Coffee Varieties
 
-A SvelteKit project that displays coffee data, including blend name, origin, variety, notes, and related images. 
+A SvelteKit project that displays coffee data, including blend name, origin, variety, notes, and related images.
 
 ## Features
+
 - Displays detailed information about various coffee varieties.
 - Error handling for invalid or missing data.
 - Interactive UI with responsive design.
@@ -10,12 +11,14 @@ A SvelteKit project that displays coffee data, including blend name, origin, var
 ## Prerequisites
 
 Before running the project, ensure you have the following installed:
+
 - [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/)
 
 ## Installation
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/coffee-varieties.git
    ```
@@ -94,6 +97,7 @@ yarn test
 ## Dependencies
 
 ### Development Dependencies:
+
 - `@eslint/compat`, `@eslint/js`: ESLint configuration for JavaScript.
 - `@sveltejs/kit`: SvelteKit framework for building apps.
 - `@sveltejs/vite-plugin-svelte`: Vite plugin for Svelte.
@@ -102,8 +106,9 @@ yarn test
 - `vitest`: Testing framework.
 - `prettier`, `eslint-config-prettier`: Code formatting and linting.
 - `svelte-check`: Type-checking for Svelte files.
-  
+
 ### Production Dependencies:
+
 - `lru-cache`, `node-cache`: Caching utilities for optimizing app performance.
 - `pino`, `pino-pretty`: Logging libraries for structured logs.
 
