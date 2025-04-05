@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/vitest';
 import { render, screen, waitFor } from '@testing-library/svelte';
 import CoffeeCard from './CoffeeCard.svelte';
 import { afterEach, beforeEach, describe, expect, it, vi, type Mock } from 'vitest';
@@ -30,7 +29,7 @@ const mockData = {
 };
 
 describe('CoffeeCard', () => {
-	it('renders coffee data', async () => {
+	it('should renders coffee data', async () => {
 		render(CoffeeCard, { props: { data: mockData } });
 
 		expect(screen.getByText('Test Blend')).toBeInTheDocument();
@@ -47,7 +46,7 @@ describe('CoffeeCard', () => {
 		});
 	});
 
-	it('shows fallback if image fails', async () => {
+	it('should shows fallback if image fails', async () => {
 		(global.fetch as Mock).mockRejectedValueOnce(new Error('fail'));
 
 		render(CoffeeCard, { props: { data: mockData } });

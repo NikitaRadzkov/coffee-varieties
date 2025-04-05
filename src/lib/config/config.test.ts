@@ -12,12 +12,12 @@ describe('Configuration', () => {
 			config = loadConfig();
 		});
 
-		it('loads mocked values', () => {
+		it('should loads mocked values', () => {
 			expect(config.api.coffee).toBe('https://test-api.com');
 			expect(config.cache.ttl).toBe(3600 * 1000);
 		});
 
-		it('has correct production flags', () => {
+		it('should has correct production flags', () => {
 			expect(config.isProduction).toBe(true);
 			expect(config.isDevelopment).toBe(false);
 		});
@@ -29,22 +29,22 @@ describe('Configuration', () => {
 			config = loadConfig();
 		});
 
-		it('uses default API URL', () => {
+		it('should uses default API URL', () => {
 			expect(config.api.coffee).toBe('https://random-data-api.com/api/coffee/random_coffee');
 		});
 
-		it('uses default cache TTL', () => {
+		it('should uses default cache TTL', () => {
 			expect(config.cache.ttl).toBe(86400 * 1000);
 		});
 	});
 
 	describe('with invalid env', () => {
-		it('throws error for invalid URL', () => {
+		it('should throws error for invalid URL', () => {
 			vi.stubEnv('COFFEE_API_URL', 'invalid-url');
 			expect(() => loadConfig()).toThrowError(/Invalid environment variables/);
 		});
 
-		it('throws error for negative TTL', () => {
+		it('should throws error for negative TTL', () => {
 			vi.stubEnv('CACHE_TTL_SECONDS', '-100');
 			expect(() => loadConfig()).toThrowError(/Invalid environment variables/);
 		});

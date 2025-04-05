@@ -11,7 +11,7 @@ describe('Coffee API endpoint', () => {
 		vi.clearAllMocks();
 	});
 
-	it('returns coffee data', async () => {
+	it('should returns coffee data', async () => {
 		const mockData = {
 			blend_name: 'Test Blend',
 			origin: 'Test',
@@ -30,12 +30,12 @@ describe('Coffee API endpoint', () => {
 		expect(data).toEqual(mockData);
 	});
 
-	it('handles invalid index', async () => {
+	it('should handles invalid index', async () => {
 		const response = await GET({ params: { index: 'invalid' } });
 		expect(response.status).toBe(400);
 	});
 
-	it('handles fetch errors', async () => {
+	it('should handles fetch errors', async () => {
 		getCachedCoffee.mockResolvedValue(null);
 
 		const response = await GET({ params: { index: '1' } });
